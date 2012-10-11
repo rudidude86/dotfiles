@@ -1,0 +1,15 @@
+shell -$SHELL      # dash makes it a login shell
+defscrollback 10000
+defutf8 on
+
+
+vbell off
+nonblock on
+startup_message off
+term xterm
+#term xterm-256color
+termcapinfo xterm ti@:te@
+#caption string "%w"
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+hardstatus             alwayslastline
+hardstatus string "%{= kw}%-w%{= BW}%n %t%{-}%+w %-= %c"
