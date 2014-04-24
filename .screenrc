@@ -2,14 +2,39 @@ shell -$SHELL      # dash makes it a login shell
 defscrollback 10000
 defutf8 on
 
+# I really want this to be escape ^``, which the internet claims should work, but does not
+escape `t
+
+# Change window
+bindkey "^[Od" prev
+bindkey "^[Oc" next
 
 vbell off
 nonblock on
 startup_message off
-term xterm
+#term xterm
 #term xterm-256color
 termcapinfo xterm ti@:te@
-#caption string "%w"
+caption string "%w"
 #hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 hardstatus             alwayslastline
 hardstatus string "%{= kw}%-w%{= BW}%n %t%{-}%+w %-= %c"
+
+# make screen not resize putty width
+termcap xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+terminfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
+
+# Enable 256-color mode when screen is started with TERM=xterm-256color
+# Taken from: http://frexx.de/xterm-256-notes/
+#
+# Note that TERM != "xterm-256color" within a screen window. Rather it is
+# "screen" or "screen-bce"
+#
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+#attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+#termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#term xterm-256color
+#defbce "on"
