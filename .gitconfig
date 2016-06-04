@@ -5,3 +5,8 @@
         status = auto
 [core]
         editor = emacs
+[user]
+        name = Ryan Rud
+        email = ryan.rud@gmail.com
+[push]
+        default = simple

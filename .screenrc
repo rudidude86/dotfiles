@@ -1,6 +1,6 @@
-shell -$SHELL      # dash makes it a login shell
-defscrollback 10000
-defutf8 on
+shell -$SHELL            # The dash makes it a login shell
+defscrollback 10000      # Huge history, because why not?
+defutf8 on               # Deal with UTF characters better
 
 # I really want this to be escape ^``, which the internet claims should work, but does not
 escape `t
@@ -38,3 +38,7 @@ terminfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 #termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 #term xterm-256color
 #defbce "on"
+
+screen -t "compass" 2 bash -c '~/platform/scripts/compass watch'
+screen -t "mongo" 3 bash -c 'mongo www.caringbridge.dev/CB'
+screen -t "bash" 1 bash
