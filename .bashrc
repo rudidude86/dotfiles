@@ -19,7 +19,10 @@ export SVN_EDITOR="emacs"
 export EDITOR="emacs"
 export GOPATH="$HOME/go"
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH:~/bin:$GOPATH/bin:~/.composer/vendor/bin
-export APPLICATION_ENV="vagrant-cluster"
+
+# Make sure I can see 💩  in Terminal!
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 
 #Git bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
